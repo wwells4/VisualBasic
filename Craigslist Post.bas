@@ -14,7 +14,9 @@ Set MSForms_DataObject = Nothing
 'Open Craigslist
 bot.Start "chrome", "https://sandiego.craigslist.org/"
 'Navigate To Login
-bot.get "https://accounts.craigslist.org/login"
+bot.get "https://sandiego.craigslist.org/"
+'Login
+bot.findElementByXPath("//*[@id=""postlks""]/li[2]/a").Click
 'Type Email
 values = ActiveSheet.Range("D2").Value
 bot.findElementByXPath("//*[@id=""inputEmailHandle""]").SendKeys (values)
